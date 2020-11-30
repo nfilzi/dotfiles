@@ -41,7 +41,4 @@ export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 # export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
 # export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"
 
-source "helpers/init_ruby_experiment.sh"
-
-
-
+for file in helpers/*; do source $file; done
