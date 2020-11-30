@@ -3,5 +3,66 @@ alias ip="curl ipinfo.io/ip"
 alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 alias speedtest="wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip"
 
-# Quickly serve the current directory as HTTP
+# Ruby related utilities
+## Quickly serve the current directory as HTTP
 alias serve='ruby -run -e httpd . -p 8000'  # Or python -m SimpleHTTPServer :)
+
+# Git
+alias glp="git lp"
+alias inflate='ruby -r zlib -e "STDOUT.write Zlib::Inflate.inflate(STDIN.read)"'
+
+# Github
+alias gh_rate_limit="curl https://api.github.com/rate_limit"
+
+# VLC
+alias vlc='/Applications/VLC.app/Contents/MacOS/VLC'
+
+# Utilities
+## Mainstream folders
+alias desktop="cd ~/Desktop"
+alias dls="cd ~/Downloads"
+alias dropbox="cd ~/Dropbox"
+alias gro="open ~/Dropbox/GRO && clear"
+alias thoughts="cd ~/Desktop/thoughts && st ."
+
+source "/Users/nfilzi/code/utilities/open_slack_workspaces"
+alias open_slack=open_slack_workspaces
+
+alias cantine_to_eventbrite="ruby ~/Desktop/eventbrite-setup-collab-cantine/main.rb"
+
+# Coding folders
+alias work="cd ~/work"
+alias code="cd ~/code/learning"
+alias cs="open ~/Dropbox/library/cs"
+alias studies="cd ~/Desktop/learning/studies"
+
+# Projects
+alias projects="cd ~/Desktop/projects"
+alias solid="cd ~/Desktop/solid-ruby-design"
+alias tiny="cd ~/Desktop/tiny-bnb-project/app"
+alias bonsai="cd ~/Desktop/rails-advanced/bonsai"
+alias housing-list="cd ~/Desktop/projects/ideas/housing-list"
+
+## Freelance
+alias freelance="cd ~/work/freelance"
+
+alias kdt="cd ~/work/freelance/koudetat/app"
+alias lgt="cd ~/work/freelance/deuxio/la_growth_team"
+alias dgz="cd ~/work/freelance/diggerz/app"
+alias cap="cd ~/work/freelance/premiercap"
+alias rdf="cd ~/work/freelance/drakkr/robin_des_fermes"
+
+## Coaching
+alias coaching="cd ~/work/coaching"
+
+## Teaching @ Le Wagon
+alias wagon="cd ~/work/lewagon"
+alias nantes="cd ~/work/lewagon/cities/nantes"
+alias rennes="cd ~/work/lewagon/cities/rennes"
+alias amsterdam="cd ~/work/lewagon/cities/amsterdam"
+alias current_batch="cd ~/work/lewagon/cities/nantes/batch498"
+
+# Windows software launching utilities
+alias gw="open ~/Applications/CrossOver/Gw.app"
+alias winscop="open ~/Applications/CrossOver/WinScop/Gestion\ Commerciale.app"
+alias ge_bills="open ~/Library/Application\ Support/CrossOver/Bottles/Winscop/drive_c/Program\ Files/Winscop/Gestion\ Commerciale/pdf"

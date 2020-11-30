@@ -11,16 +11,19 @@
 
 [core]
   pager = less -FRSX
-	editor = '/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl' -n -w
+  editor = /Applications/Sublime\\ Text.app/Contents/SharedSupport/bin/subl -n -w
 
 [alias]
+  amend = !git add -A && git commit --amend --no-edit
   co = checkout
   st = status -sb
   br = branch
+  bra = branch -a
   ci = commit
   fo = fetch origin
   d = !git --no-pager diff
-  dt  = difftool
+  dt = difftool
+  dc = diff --cached
   stat = !git --no-pager diff --stat
 
   # Clean merged branches
@@ -28,6 +31,8 @@
 
   # http://www.jukie.net/bart/blog/pimping-out-git-log
   lg = log --graph --all --pretty=format:'%Cred%h%Creset - %s %Cgreen(%cr) %C(bold blue)%an%Creset %C(yellow)%d%Creset'
+
+  lp = log --pretty=format:'%C(yellow)%h%C(reset) - %an [%C(green)%ar%C(reset)] %s'
 
   # Serve local repo. http://coderwall.com/p/eybtga
   # Then other can access via `git clone git://#{YOUR_IP_ADDRESS}/
@@ -38,14 +43,27 @@
   # Removes a file from the index
   unstage = reset HEAD --
 
+  uncommit = reset --soft HEAD^
+
 [help]
   autocorrect = 1
 
 [push]
-	default = simple
+  default = simple
 
 [branch "master"]
   mergeoptions = --no-edit
 [user]
-	email = nfilzi.webservices@gmail.com
-	name = Nicolas Filzi
+  email = nfilzi.webservices@gmail.com
+  name = Nicolas Filzi
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  required = true
+  process = git-lfs filter-process
+[credential]
+  helper = osxkeychain
+[github]
+  user = nfilzi
+[ghi]
+  token = !security find-internet-password -a nfilzi -s github.com -l 'ghi token' -w
