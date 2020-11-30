@@ -1,4 +1,4 @@
-init_ruby_experiment() {
+initrb() {
   while getopts ":n:" option; do
     case "${option}" in
       n)
